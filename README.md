@@ -47,7 +47,7 @@ Click on Add > Basic Web content
   
   
   
-#####Add loop to get no od tabs
+#####Add loop to get no of tabs
 ```
 #foreach ($tab in $tabs.getSiblings())
         #set($tabCnt = $tabCnt + 1)
