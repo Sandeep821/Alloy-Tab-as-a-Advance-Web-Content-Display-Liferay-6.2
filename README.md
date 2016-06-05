@@ -1,6 +1,10 @@
 # How to convert Alloy Tabs into Liferay 6.2 advance web content
 Visit Alloy UI Tab page to understand the functionality about AUI tab plugin - http://alloyui.com/examples/tabview/ 
 
+![alt text](https://github.com/Sandeep821/Alloy-Tab-as-a-Advance-Web-Content-Display-Liferay-6.2/blob/master/AUI-Tab.PNG)
+
+
+
 ## Software dependency:
 
 ```Liferay 6.2 and classic or any custom theme```
