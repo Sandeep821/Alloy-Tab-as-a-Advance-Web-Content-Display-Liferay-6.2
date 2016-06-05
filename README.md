@@ -3,7 +3,7 @@ Visit Alloy UI Tab page to understand the functionality about AUI tab plugin - h
 
 ## Software dependency:
 
-Liferay 6.2 and classic or any custom theme
+```Liferay 6.2 and classic or any custom theme```
 
 ##How to use this code:
 ###STEP1: Create Web Content
