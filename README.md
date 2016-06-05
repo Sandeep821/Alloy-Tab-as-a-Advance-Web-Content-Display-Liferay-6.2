@@ -10,9 +10,9 @@ Visit Alloy UI Tab page to understand the functionality about AUI tab plugin - h
 In DockBar click on Admin > Content – in left nav click on ‘Web content’ 
 Click on Add > Basic Web content
 
-###TEP 2: Add/Create structure
+###STEP 2: Add/Create structure
 Create structure add fields to get tabs input.
- Add filed 
+Add filed 
 Tab ID – as textbox, 
 Tab Name – textbox 
 Tab Content – HtmlTextbox
@@ -23,33 +23,46 @@ Code:get it from 'tab-structure.xml'
 ###STEP 3: Add/Create Template
 Select Velocity template
 Set variables
-'## SET DEBUG STATE
+```
+## SET DEBUG STATE
 #set($debug = "false ")
 
 #set($tabCnt = 0)
-#if (!$tabs.getSiblings().isEmpty())'
+#if (!$tabs.getSiblings().isEmpty())
+```
+
 
 ####Add AUI tab container
-'<div id="tabWebContent">
-  <ul class="nav nav-tabs">'
+```
+<div id="tabWebContent">
+  <ul class="nav nav-tabs">
+```  
+  
+  
   
 ####Add loop to get no od tabs
-'#foreach ($tab in $tabs.getSiblings())
+```
+#foreach ($tab in $tabs.getSiblings())
         #set($tabCnt = $tabCnt + 1)
         #set($tabId = "tab-" + $tabCnt)	
-        #set($uiId = "ui-id-" + $tabCnt)'
-        
+        #set($uiId = "ui-id-" + $tabCnt)
+```        
+
 ####Check null value and Add tab name template
-'#if($tab.getData() != "null")
+```
+#if($tab.getData() != "null")
  <li><a href="#$tabId">$tab.tabName.getData()</a></li>
-#end'
+#end
+```
 
 ####End first loop
-'#end	
-</ul>'	
+```#end
+</ul> 
+```	
 
 ####Add tab content container
-'<div class="tab-content">'
+```
+<div class="tab-content">'
 ####Add tabs content template 
   '#set($tabCnt = 0)
    #foreach ($tab in $tabs.getSiblings())
@@ -61,20 +74,26 @@ Set variables
       <p>$tab.tab_contnet.getData()</p>
       </div>
 	  #end
-   #end'
+   #end
+   ```
    
 ####Close tab content container 
-'</div>'
+```</div>
+```
 
 ####Close tab main container 
-'</div>'
+```</div>
+```
 
 ####End first if condition 
-'#end'
+```#end
+```
 
 ###STEP4 – Add AUI/YUI script
+
 ####Add script within structure after the all the code
-'<script>
+```
+<script>
 YUI().use(
   'aui-tabview',
   function(Y) {
@@ -86,7 +105,8 @@ YUI().use(
   }
 );
 
-</script>'
+</script>
+```
 ####Save the template 
 
 ###STEP5 – Add content and publish the web content.
