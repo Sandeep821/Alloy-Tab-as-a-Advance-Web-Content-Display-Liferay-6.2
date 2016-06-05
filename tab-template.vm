@@ -1,0 +1,56 @@
+## SET DEBUG STATE
+#set($debug = "false ")
+
+#set($tabCnt = 0)
+#if (!$tabs.getSiblings().isEmpty())
+
+<div id="tabWebContent">
+
+  <ul class="nav nav-tabs">
+  #foreach ($tab in $tabs.getSiblings())
+        #set($tabCnt = $tabCnt + 1)
+        #set($tabId = "tab-" + $tabCnt)	
+        #set($uiId = "ui-id-" + $tabCnt)	
+		#if($debug == "true")&nbsp;&nbsp;&nbsp;&nbsp;<b>\$tabId</b> = $tabId</br>#end	
+		#if($debug == "true")&nbsp;&nbsp;&nbsp;&nbsp;<b>\$tab.tabName.getData()</b> = $tab.tabName.getData()</br>#end	
+        #if($debug == "true")&nbsp;&nbsp;<b>\$cnt</b> = $cnt</br>#end	
+        #if($debug == "true")&nbsp;&nbsp;<b>\$isActive</b> = $isActive</br>#end	
+        #if($debug == "true")&nbsp;&nbsp;<b>\$activeClasses</b> = $activeClasses</br>#end	
+        #if($tab.getData() != "null")
+				 <li><a href="#$tabId">$tab.tabName.getData()</a></li>
+		 #end	
+	#end	
+	
+  </ul>
+
+  <div class="tab-content">
+   #set($tabCnt = 0)
+   #foreach ($tab in $tabs.getSiblings())
+       #set($tabCnt = $tabCnt + 1)
+        #set($tabId = "tab-" + $tabCnt)	
+        #set($uiId = "ui-id-" + $tabCnt)	    
+      #if($tab.getData() != "null")
+      <div id="#$tabId" class="tab-pane">
+      <p>$tab.tab_contnet.getData()</p>
+      </div>
+	  #end
+   #end
+
+  </div>
+
+</div>
+#end
+
+<script>
+YUI().use(
+  'aui-tabview',
+  function(Y) {
+    new Y.TabView(
+      {
+        srcNode: '#tabWebContent'
+      }
+    ).render();
+  }
+);
+
+</script>
