@@ -7,7 +7,7 @@ Visit Alloy UI Tab page to understand the functionality about AUI tab plugin - h
 
 ## Software dependency:
 
-```Liferay 6.2 and classic or any custom theme```
+```Liferay 6.2, velocity template and classic or any custom theme```
 
 ##How to use this code:
 download 'tab-structure.xml' and 'tab-template.vm' add into liferay site, then add basic web content and select 'tab-structure.xml' as a structure and 'tab-template.vm' as template, then add tab contnet then publish web content.
